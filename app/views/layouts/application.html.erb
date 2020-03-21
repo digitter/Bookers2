@@ -10,6 +10,41 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header class="navbar navbar-fixed-top navbar-inverse clearfix">
+      <div class="container">
+        <nav class="nav navbar-nav navbar-left">
+          <span>Bookers</span>
+        </nav>
+
+        <nav class="nav navbar-nav navbar-right">
+          <ul>
+            <li>
+              <%= link_to  "Home", home_about_path %>
+            </li>
+            <li>
+              <%= link_to  "Users", home_about_path %>
+            </li>
+            <li>
+              <%= link_to  "Bookers", home_about_path %>
+            </li>
+            <li>
+              <%= link_to  "logout", home_about_path %>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="body">
+      <%= yield %>
+    </div>
+
+    <footer>
+      <div class="row">
+        <div class="col-xs-3 col-xs-offset-9">
+          <p>CopyRight digitter.inc</p>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

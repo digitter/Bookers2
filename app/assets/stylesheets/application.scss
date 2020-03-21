@@ -16,3 +16,55 @@
 
  @import 'bootstrap-sprockets';
  @import 'bootstrap';
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.clearfix::after {
+  color: white;
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.container {
+  width: 1170px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+// header
+.navbar-left {
+  float: left;
+}
+.navbar-left span {
+  color: white;
+  font-size: 25px;
+  line-height: 50px;
+}
+.navbar-right {
+  float: right;
+}
+.navbar-right li {
+  float: left;
+  list-style: none;
+  font-size: 20px;
+  padding-right: 10px;
+}
+.navbar-right a {
+  color: gray;
+  padding-top: 10px;
+  line-height: 50px;
+}
+
+// body
+.body {
+  margin-top: 60px;
+}
+
+// footer
