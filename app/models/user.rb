@@ -5,4 +5,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   validates :introduction, length: { maximum: 50}
+  attachment :profile_image
 end
