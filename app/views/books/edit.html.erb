@@ -4,15 +4,23 @@
       <h1>Editing Book</h1>
     </div>
 
-			<%= form_for(@book) do |f| %>
+		<% if @book.errors.any? %>
+			<h2 style="color: red;">
+				<%= pluralize(@book.errors.count,"error") %> prohibited this obj from being saved:
+			</h2>
+			<% @book.errors.full_messages.each do |msg| %>
+				<li style="color: red;"><%= msg %></li>
+			<% end %>
+		<% end %>
 
+		<%= form_for(@book) do |f| %>
 			<div class="row">
-					<div class="title col-lg-6 col-lg-offset-3">
-						<p><strong>Title </strong></p>
-					</div>
-					<div class="col-lg-6 col-lg-offset-3">
-						<%= f.text_field :title %>
-					</div>
+				<div class="title col-lg-6 col-lg-offset-3">
+					<p><strong>Title </strong></p>
+				</div>
+				<div class="col-lg-6 col-lg-offset-3">
+					<%= f.text_field :title %>
+				</div>
 				</div>
 				<div class="row">
 					<div class="opinion col-lg-6 col-lg-offset-3">
@@ -27,8 +35,8 @@
 						<%= f.submit "Update Book", class:"submit btn btn-primary btn-block" %>
 					</div>
 				</div>
-			<% end %>
-		</div>
+			</div>
+		<% end %>
 
 		<div class="row">
 			<div class="col-lg-6 col-lg-offset-3">

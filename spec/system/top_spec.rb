@@ -1,5 +1,6 @@
 require 'rails_helper'
 
+# describe 'トップページのテスト', type: :feature, js: true do
 describe 'トップページのテスト' do
   let(:user) { create(:user) }
   before do
@@ -33,6 +34,7 @@ describe 'トップページのテスト' do
         expect(page).to have_content 'User info'
       end
       it 'Sign Upリンクをクリックしたらユーザー詳細画面に遷移する' do
+        binding.pry
         signup_link = find_all('a')[5].native.inner_text
         click_link signup_link
         expect(page).to have_content 'User info'

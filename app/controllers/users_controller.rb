@@ -1,4 +1,14 @@
 class UsersController < ApplicationController
+  before_action :ensure_current_user_profile?, only: [:edit, :update]
+    def ensure_current_user_profile?
+      if user_signed_in?
+        user = User.find(params[:id])
+        if current_user.id !=  user.id
+          redirect_to user_path(current_user)
+        end
+      end
+    end
+
   def index
     if user_signed_in?
       @users = User.all
