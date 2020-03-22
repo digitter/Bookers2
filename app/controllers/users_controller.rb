@@ -1,7 +1,12 @@
 class UsersController < ApplicationController
   def show
-    @book = Book.new
-    @books = Book.all
+    if user_signed_in?
+      @user = User.find(params[:id])
+      @book = Book.new
+      @books = Book.all
+    else
+      redirect_to enw_user_session_path
+    end
   end
 
   def edit
