@@ -5,4 +5,7 @@ Rails.application.routes.draw do
   get '/home/about', to: 'home#about'
 
   devise_for :users
+  resources :users, only: %i[show index edit update]
+
+  resources :books, except: %i[new]
 end
