@@ -15,7 +15,7 @@ class UsersController < ApplicationController
       @books = @user.books
       @book = Book.new
     else
-      redirect_to enw_user_session_path
+      redirect_to new_user_session_path
     end
   end
 
