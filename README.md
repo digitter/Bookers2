@@ -1,6 +1,6 @@
 # README
 
-* RSpec テスト
+* RSpec ???
 ```
-＄ bundle exec rspec spec/ --format documentation
+$ bundle exec rspec spec/ --format documentation
 ```
