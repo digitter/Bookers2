@@ -18,6 +18,7 @@ class BooksController < ApplicationController
 
   def show
     if user_signed_in?
+      @new_book = Book.new
       @book = Book.find(params[:id])
       @user = User.find(@book.user_id)
     else
