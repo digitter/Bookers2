@@ -10,31 +10,31 @@ class UsersController < ApplicationController
     end
 
   def index
-    if user_signed_in?
+    # if user_signed_in?
       @users = User.all
       @user = User.find(current_user.id)
       @book = Book.new
-    else
-      redirect_to new_user_session_path
-    end
+    # else
+      # redirect_to new_user_session_path
+    # end
   end
 
   def show
-    if user_signed_in?
+    # if user_signed_in?
       @user = User.find(params[:id])
       @books = @user.books
       @book = Book.new
-    else
-      redirect_to new_user_session_path
-    end
+    # else
+      # redirect_to new_user_session_path
+    # end
   end
 
   def edit
-    if user_signed_in?
+    # if user_signed_in?
       @user = User.find(params[:id])
-    else
-      redirect_to new_user_session_path
-    end
+    # else
+      # redirect_to new_user_session_path
+    # end
   end
 
   def update
