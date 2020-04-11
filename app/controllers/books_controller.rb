@@ -1,11 +1,5 @@
 class BooksController < ApplicationController
   before_action :ensure_current_user_book?, only: [:edit, :update]
-    def ensure_current_user_book?
-      # if user_signed_in?
-        book = Book.find(params[:id])
-        redirect_to books_path unless current_user.id == book.user_id
-      # end
-    end
 
   def index
     # if user_signed_in?
@@ -67,5 +61,12 @@ class BooksController < ApplicationController
   private
     def book_params
       params.require(:book).permit(:title, :body)
+    end
+
+    def ensure_current_user_book?
+      # if user_signed_in?
+        book = Book.find(params[:id])
+        redirect_to books_path unless current_user.id == book.user_id
+      # end
     end
 end
