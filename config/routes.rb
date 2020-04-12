@@ -5,7 +5,7 @@ Rails.application.routes.draw do
 
   devise_for :users
 
-  # ユーザーが認証されていたらブロック内のroutingにアクセスが可能
+  # TODO: ユーザーが認証されていたらブロック内のroutingにアクセスが可能にする
   # authenticated :user do
     resources :users, only: %i[show index edit update]
     resources :books, except: %i[new]
