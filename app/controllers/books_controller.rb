@@ -2,22 +2,14 @@ class BooksController < ApplicationController
   before_action :ensure_current_user_book?, only: [:edit, :update]
 
   def index
-    # if user_signed_in?
-      @book = Book.new
-      @books = Book.all
-    # else
-      # redirect_to new_user_session_path
-    # end
+    @book = Book.new
+    @books = Book.all
   end
 
   def show
-    # if user_signed_in?
-      @new_book = Book.new
-      @book = Book.find(params[:id])
-      @user = User.find(@book.user_id)
-    # else
-      # redirect_to new_user_session_path
-    # end
+    @new_book = Book.new
+    @book = Book.find(params[:id])
+    @user = User.find(@book.user_id)
   end
 
   def create
@@ -35,11 +27,7 @@ class BooksController < ApplicationController
   end
 
   def edit
-    # if user_signed_in?
-      @book = Book.find(params[:id])
-    # else
-      # redirect_to new_user_session_path
-    # end
+    @book = Book.find(params[:id])
   end
 
   def update
@@ -64,9 +52,7 @@ class BooksController < ApplicationController
     end
 
     def ensure_current_user_book?
-      # if user_signed_in?
-        book = Book.find(params[:id])
-        redirect_to books_path unless current_user.id == book.user_id
-      # end
+      book = Book.find(params[:id])
+      redirect_to books_path unless current_user.id == book.user_id
     end
 end
