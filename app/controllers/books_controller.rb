@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     else
       @user = User.find(current_user.id)
       @book = book
-      @books = Book.all
+      @books = Book.all.includes(:user).all
       render :index
     end
   end
