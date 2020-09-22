@@ -3,7 +3,7 @@ class BooksController < ApplicationController
 
   def index
     @book = Book.new
-    @books = Book.includes(:user).all
+    @books = Book.all_with_users
   end
 
   def show
@@ -21,7 +21,7 @@ class BooksController < ApplicationController
     else
       @user = User.find(current_user.id)
       @book = book
-      @books = Book.all.includes(:user).all
+      @books = Book.all_with_users
       render :index
     end
   end
