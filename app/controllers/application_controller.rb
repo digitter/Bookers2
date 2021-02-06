@@ -16,7 +16,8 @@ class ApplicationController < ActionController::Base
 
   protected
     def configure_permitted_parameters
+      # devise.rbのauthentication_keysでnameを設定しているので
+      # name + password は signin でも signupでも許可されている
       devise_parameter_sanitizer.permit(:sign_up, keys: [:email])
-      # devise_parameter_sanitizer.permit(:sign_in, keys: [:name])
     end
 end

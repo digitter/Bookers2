@@ -13,7 +13,7 @@
       </tr>
     </tbody>
   </table>
-  <% if current_user == user%>
+  <% if current_user == user %>
     <%= link_to '', edit_user_path(current_user.id), {class: "btn btn-default btn-block glyphicon glyphicon-wrench"} %>
   <% else %>
     <%= link_to '', user_path(current_user.id), {class: "btn btn-default btn-block glyphicon glyphicon-wrench"} %>
